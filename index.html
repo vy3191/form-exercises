@@ -6,27 +6,33 @@
     <style>
       label { display: block; margin-bottom: 7px;}
     </style>
+    <script type="text/javascript" src="script.js"></script>
   </head>
   <body>
     <!-- TODO: add form here -->
     <h1>Rocket Simulation</h1>
-    <form method="post" action="https://handlers.education.launchcode.org/request-parrot">
+    <form method="post" action="https://handlers.education.launchcode.org/request-parrot" id="my-form">
       <label>Test Name &nbsp;
-        <input type="text" name="testName" />
+        <input type="text" name="testName" id="test-name"/>
+        <div id="name-error"></div>
       </label>
       <label>Test Date &nbsp;
-        <input type="date" name="testDate" />
+        <input type="date" name="testDate" id="test-date" />
+        <div id="date-error"></div>
       </label>
       <label>Rocket Type &nbsp;
-        <select name="rocketType">
+        <select name="rocketType" id="test-select">
+          <option value="">Select One</option>
           <option value="Lynx">Lynx</option>
           <option value="pslv-1">PSLV-1</option>
           <option value="pslv-2">PSLV-2</option>
           <option value="pslv-3">PSLV-3</option>
         </select>
+        <div id="select-error"></div>
       </label>
       <label>Number of Rocket Boosters &nbsp;
-        <input type="number" name="boosterCount" />
+        <input type="number" name="boosterCount" id="test-num" />
+        <div id="booster-error"></div>
       </label>
       <p>Wind Rating:</p>
       <label>No Wind&nbsp;
@@ -39,12 +45,11 @@
         <input type="radio" name="windRating" value=20 />
       </label>
       <label>Use production grade servers &nbsp;
-        <input type="checkbox" name="productionServers" />
+        <input type="checkbox" name="productionServers" id="test-check" />
+        <div id="checkbox-error"></div>
       </label>
       <button>Run Simulation</button>
-
-    </form>
-    
+    </form>  
 
     <p>WARNING: This ONLY works in <b>replit</b> if this "result" page is opened in its own window. Click the icon that shows a box with an arrow coming out of it.
     </p>
